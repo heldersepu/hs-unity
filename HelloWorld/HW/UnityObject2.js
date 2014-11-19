@@ -498,7 +498,7 @@ var UnityObject2 = function(J) {
             return t
         },initPlugin: function(ag, ah) {
             x.targetEl = ag;
-            x.src = parseURL(ah);
+            x.src = ah;
             n("ua:", t);
             this.detectUnity(this.handlePluginStatus)
         },detectUnity: function(at, ah) {
