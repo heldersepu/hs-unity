@@ -239,30 +239,7 @@ var UnityObject2 = function(J) {
         function am() {
             return Math.floor(Math.random() * 2147483647)
         }
-        function ak() {
-            var at = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
-            var ap = Y.getElementsByTagName("script");
-            var au = false;
-            for (var ar = 0; ar < ap.length; ++ar) {
-                if (ap[ar].src && ap[ar].src.toLowerCase() == at.toLowerCase()) {
-                    au = true;
-                    break
-                }
-            }
-            if (!au) {
-                var aq = Y.createElement("script");
-                aq.type = "text/javascript";
-                aq.async = true;
-                aq.src = parseURL(at);
-                var ao = document.getElementsByTagName("script")[0];
-                ao.parentNode.insertBefore(aq, ao)
-            }
-            var an = (x.debugLevel === 0) ? "UA-16068464-16" : "UA-16068464-17";
-            ah.push(["unity._setDomainName", "none"]);
-            ah.push(["unity._setAllowLinker", true]);
-            ah.push(["unity._setReferrerOverride", " " + this.location.toString()]);
-            ah.push(["unity._setAccount", an]);
-            ah.push(["unity._setCustomVar", 1, "Revision", "b073107612b7", 2])
+        function ak() {            
         }
         function aj(ar, ap, at, ao) {
             if (!x.enableUnityAnalytics) {
