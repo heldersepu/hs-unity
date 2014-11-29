@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\HelloWorld\Assets\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Movement.cs">
     <Files>
-      <File FileName="..\HelloWorld\Assets\Player.cs" Line="15" Column="3" />
+      <File FileName="Assets\Movement.cs" Line="13" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
