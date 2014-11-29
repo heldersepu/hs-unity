@@ -25,9 +25,9 @@ public class Movement : MonoBehaviour {
 		}
 
 		if(Input.GetKey(KeyCode.A))
-			transform.Rotate (0, -rotationSpeed, 0);
+			transform.Rotate (0, -srt, 0);
 		if(Input.GetKey(KeyCode.D))
-			transform.Rotate (0, rotationSpeed, 0);
+			transform.Rotate (0, srt, 0);
 
 		if(Input.GetKey(KeyCode.W))
 			transform.Translate (0, 0, spd);
@@ -38,9 +38,9 @@ public class Movement : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Q))
 			transform.Translate (-spd, 0, 0);
 
-		if(Input.GetKey(KeyCode.Space) && (Time.frameCount - lastJump > 100))
+		if(Input.GetKeyUp(KeyCode.Space) && (Time.frameCount - lastJump > 50))
 		{
-			rigidbody.AddForce(new Vector3 (0, 1, 0) * jumpPower, ForceMode.Impulse);
+			rigidbody.AddForce(new Vector3 (0, 5, 0) * jumpPower, ForceMode.Impulse);
 			lastJump = Time.frameCount;
 		}
 
