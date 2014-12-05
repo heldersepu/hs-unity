@@ -45,4 +45,5 @@ public class Ship : MonoBehaviour {
 		transform.Translate (spd, 0, 0);
 		spd *= 0.95f;
 	}
+	
 }
