@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class camera : MonoBehaviour {
-	public int max_asteroids = 8;
+	public int MaxAsteroids = 8;
 	public GameObject asteroid;
 
 	private List<GameObject> dAsteroids = new List<GameObject>();
@@ -12,14 +12,23 @@ public class camera : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (dAsteroids.Count < max_asteroids) {
+
+	void createAster() {
+		dAsteroids.Remove(null);
+		if (dAsteroids.Count < MaxAsteroids) {
 			Vector3 pos = new Vector3(dAsteroids.Count, 0 , 0);
 			GameObject aster = (GameObject)Instantiate(asteroid, pos, Quaternion.identity);
 			dAsteroids.Add(aster);   
 		}
+	}
 
+	private float timer = 0;
+	void Update () {
+		timer += Time.deltaTime;
+		if (timer >= 2) {
+			timer = 0;
+			createAster();
+		}
 	}
 }
+
