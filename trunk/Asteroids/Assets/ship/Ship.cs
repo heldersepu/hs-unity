@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Ship : MonoBehaviour {
 	public float forwardSpeed = 0.12f;
 	public float rotationSpeed = 2.5f;
+	public int MaxMisiles = 10;
+	public GameObject misile;
 
+	private List<GameObject> dMisiles = new List<GameObject>();
 	private float spd = 0;
 	private Animator anim;
 	void Start () {
@@ -13,7 +17,7 @@ public class Ship : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		dMisiles.Remove(null);
 	}
 
 	void FixedUpdate () {
@@ -22,9 +26,13 @@ public class Ship : MonoBehaviour {
 		if (Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) 
 			shift = 2;
 
-		if(Input.GetKeyUp(KeyCode.Space))
+		if(Input.GetKey(KeyCode.Space))
 		{
-			//rigidbody.AddForce(new Vector3 (0, 5, 0) * jumpPower, ForceMode.Impulse);
+			if (dMisiles.Count < MaxMisiles) {
+				GameObject misil = (GameObject)Instantiate(misile, transform.position , Quaternion.identity);
+				misil.transform.rotation = transform.rotation;
+				dMisiles.Add(misil);   
+			}
 		}
 
 
@@ -43,7 +51,7 @@ public class Ship : MonoBehaviour {
 		anim.SetBool ("Fast", fastAnim);
 
 		transform.Translate (spd, 0, 0);
-		spd *= 0.95f;
+		spd *= 0.975f;
 	}
 	
 }
