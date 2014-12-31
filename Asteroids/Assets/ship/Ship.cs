@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Ship : MonoBehaviour {
-	public float forwardSpeed = 0.12f;
-	public float rotationSpeed = 2.5f;
+	public float MaxSpeed = 5f;
+	public float RotationSpeed = 2.5f;
 	public int MaxMissiles = 10;
 	public int MaxMines = 5;
 	public GameObject Missile;
@@ -17,36 +17,28 @@ public class Ship : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		dMissiles.Remove(null);
 	}
 
 	void FixedUpdate () {
+		int shift = Input.GetKey(KeyCode.LeftShift) ? 2 : 1;
+		bool acce = (Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow));
+		anim.SetBool ("Fast", acce);
 
-		int shift = 1;
-		if (Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift)) 
-			shift = 2;
+		if (acce)
+			rigidbody2D.AddRelativeForce(Vector3.right * MaxSpeed * shift);
 
-		if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-			transform.Rotate (0, 0, rotationSpeed * shift);
-		if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-			transform.Rotate (0, 0, -rotationSpeed * shift);
+		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+			transform.Rotate (0, 0, RotationSpeed * shift);
 
-		bool fastAnim = false;
-		if (Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow))
-		{
-			transform.rigidbody2D.constantForce  = forwardSpeed * shift;
-			fastAnim = true;
-		}
-		anim.SetBool ("Fast", fastAnim);
+		if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+			transform.Rotate (0, 0, -RotationSpeed * shift);
+		
+		if (Input.GetKey(KeyCode.Space)) shoot ();
 
-		if(Input.GetKey(KeyCode.Space))
-			shoot ();
-
-		if(Input.GetKeyDown(KeyCode.M)) 
-			mine ();
+		if (Input.GetKeyDown(KeyCode.M)) mine ();
 	}
 
 	void shoot() {
