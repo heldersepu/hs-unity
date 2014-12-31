@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class misile : MonoBehaviour {
+public class missile : MonoBehaviour {
 
 	public float Speed = 0.3f;
 	void Start () {
@@ -10,6 +10,7 @@ public class misile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate (Speed, 0, 0);
+		Debug.Log (Speed);
+		//transform.Translate (Speed, 0, 0);
 	}
 }
