@@ -8,9 +8,9 @@ public class camera : MonoBehaviour {
 
 	private List<GameObject> dAsteroids = new List<GameObject>();
 
-	// Use this for initialization
-	void Start () {
-	
+	void FixedUpdate () {
+		if (Input.GetKey(KeyCode.Escape))
+		    Application.Quit();
 	}
 
 	void createAster() {
