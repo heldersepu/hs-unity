@@ -10,6 +10,18 @@ public class Camera : MonoBehaviour {
 	}
 	
 	void Update () {
+		if (Input.GetMouseButtonDown(0))
+		{
+			Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+			Debug.Log(ray);
+		}
+		
+		if (Input.GetKeyDown(KeyCode.V))
+		{
+			followBall = !followBall;
+			ChangeView();
+		}
+
 		if (followBall) 
 		{
 			transform.position = ball.transform.position;
@@ -73,17 +85,17 @@ public class Camera : MonoBehaviour {
 			transform.Rotate(0,speed,0);
 	}
 	
-	void FixedUpdate () {
-		if (Input.GetKeyDown(KeyCode.V))
-		{
-			followBall = !followBall;
-			ChangeView();
-		}
-		
+	void FixedUpdate () {		
 		if (!followBall)
+		{
 			if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
 				AngleCamera();
 			else
 				MoveCamera();
+		}
+
+		if (Input.GetKey(KeyCode.Escape))
+			Application.Quit();
+
 	}
 }

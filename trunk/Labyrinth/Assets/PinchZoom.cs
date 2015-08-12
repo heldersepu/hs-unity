@@ -3,14 +3,12 @@ using System.Collections;
 
 public class PinchZoom : MonoBehaviour
 {
-	public float perspectiveZoomSpeed = 0.5f;        // The rate of change of the field of view in perspective mode.
-	public float orthoZoomSpeed = 0.5f;        // The rate of change of the orthographic size in orthographic mode.
-	
+	public float Speed = 0.1f;
 	
 	void Update()
 	{
 		// If there are two touches on the device...
-		if (Input.touchCount == 2)
+		if (Input.touchCount == 2) 
 		{
 			// Store both touches.
 			Touch touchZero = Input.GetTouch(0);
@@ -25,25 +23,15 @@ public class PinchZoom : MonoBehaviour
 			float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
 			
 			// Find the difference in the distances between each frame.
-			float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-			
-			// If the camera is orthographic...
-			if (camera.isOrthoGraphic)
-			{
-				// ... change the orthographic size based on the change in distance between the touches.
-				camera.orthographicSize += deltaMagnitudeDiff * orthoZoomSpeed;
-				
-				// Make sure the orthographic size never drops below zero.
-				camera.orthographicSize = Mathf.Max(camera.orthographicSize, 0.1f);
-			}
-			else
-			{
-				// Otherwise change the field of view based on the change in distance between the touches.
-				camera.fieldOfView += deltaMagnitudeDiff * perspectiveZoomSpeed;
-				
-				// Clamp the field of view to make sure it's between 0 and 180.
-				camera.fieldOfView = Mathf.Clamp(camera.fieldOfView, 0.1f, 179.9f);
-			}
+			float mDiff = touchDeltaMag - prevTouchDeltaMag;
+			float y = transform.position.y;
+
+			Ray ray = camera.ScreenPointToRay((touchZeroPrevPos + touchOnePrevPos)/2);
+			var pos = new Vector3(ray.origin.x, y, ray.origin.z);	
+
+			transform.position = Vector3.MoveTowards(transform.position, pos, 1);
+			if (((mDiff < 0) && (y < 50)) || ((mDiff > 0) && (y > 5)))
+				transform.Translate(0,0, mDiff * Speed);
 		}
 	}
 }
