@@ -33,7 +33,7 @@ public class Ship : MonoBehaviour {
 		anim.SetBool ("Fast", acce);
 
 		if (acce)
-			rigidbody2D.AddRelativeForce(Vector3.right * MaxSpeed * shift);
+			GetComponent<Rigidbody2D>().AddRelativeForce(Vector3.right * MaxSpeed * shift);
 
 		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || turn > 0.6)
 			transform.Rotate (0, 0, RotationSpeed * shift);
@@ -66,7 +66,7 @@ public class Ship : MonoBehaviour {
 			x += x * spd * 10;
 			float y = Mathf.Sin(angle)*10;
 			y += y * spd * 10;
-			misil.transform.rigidbody2D.velocity = new Vector3 (x, y, 0);
+			misil.transform.GetComponent<Rigidbody2D>().velocity = new Vector3 (x, y, 0);
 			dMissiles.Add(misil);
 		}
 	}
@@ -78,7 +78,7 @@ public class Ship : MonoBehaviour {
 				transform.Translate (0.001f, 0, 0);
 				transform.Rotate (0, 0, 0.001f);
 				mine = (GameObject)Instantiate (Mine, transform.position, Quaternion.identity);
-				mine.transform.rigidbody2D.isKinematic = false;
+				mine.transform.GetComponent<Rigidbody2D>().isKinematic = false;
 			}
 			dMines.Add(mine);
 		}
