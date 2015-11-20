@@ -14,11 +14,13 @@ public class Goblin : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-
 		if ((time.AddSeconds(2) < System.DateTime.Now) && (Random.Range (0, 100) < 7)) { 
 			anim.SetBool ("attack", true);
-			GameObject a = (GameObject)Instantiate(arrow, transform.position , Quaternion.identity);
 			time = System.DateTime.Now;
 		}
+	}
+
+	void ThrowArrow() {
+		Instantiate(arrow, transform.position , Quaternion.identity);
 	}
 }
