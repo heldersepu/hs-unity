@@ -15,11 +15,9 @@ public class Arrow : MonoBehaviour {
             v.x = -v.x;
 	}
 
-	void Update () {
-	
+	void Update () {	
 		transform.position += v*Time.deltaTime;
-		v += a * Time.deltaTime;
-        
-       transform.rotation = Quaternion.LookRotation(v, new Vector3(0,0,-1));
+		v += a * Time.deltaTime;        
+       	transform.rotation = Quaternion.LookRotation(v, new Vector3(0,0,-1));
 	}
 }

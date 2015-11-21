@@ -36,8 +36,10 @@ public class Orc : MonoBehaviour {
 		Debug.Log (col.gameObject.name);
 		if (col.gameObject.name.StartsWith ("arrow")) {
 			Destroy (col.gameObject);
-			flipHead();
-			Invoke("flipHead",0.4f);
+			flipHead ();
+			Invoke ("flipHead", 0.4f);
+		} else if (col.gameObject.name.StartsWith ("coin")) {
+			Destroy (col.gameObject);
 		}
 	}
 

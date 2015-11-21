@@ -49,6 +49,7 @@
      <Compile Include="Assets\Goblin Archer\Scripts\Arrow.cs" />
      <Compile Include="Assets\Goblin Archer\Scripts\Goblin.cs" />
      <Compile Include="Assets\Orc Warrior\Scripts\Orc.cs" />
+     <Compile Include="Assets\World\AddCoins.cs" />
      <Compile Include="Assets\World\Clouds\cloud.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
