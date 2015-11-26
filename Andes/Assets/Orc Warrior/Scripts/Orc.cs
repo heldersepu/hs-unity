@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Orc : MonoBehaviour {
 
 	public float speed = 10f;
+	public Text orc;
+	public Text coins;
+
 	private Animator anim;
 	private Rigidbody2D rbody;
 	private int lastJump = 0;
@@ -38,8 +42,10 @@ public class Orc : MonoBehaviour {
 			Destroy (col.gameObject);
 			flipHead ();
 			Invoke ("flipHead", 0.4f);
+			orc.text = (int.Parse(orc.text)-5).ToString();
 		} else if (col.gameObject.name.StartsWith ("coin")) {
 			Destroy (col.gameObject);
+			coins.text = (int.Parse(coins.text)+1).ToString();
 		}
 	}
 

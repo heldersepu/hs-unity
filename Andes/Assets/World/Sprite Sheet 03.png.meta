@@ -1,7 +1,23 @@
 fileFormatVersion: 2
 guid: 0c3fd16d205dc454280309e9640fada2
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Sprite Sheet 03_0
+    21300002: Sprite Sheet 03_1
+    21300004: Sprite Sheet 03_2
+    21300006: Sprite Sheet 03_3
+    21300008: Sprite Sheet 03_4
+    21300010: Sprite Sheet 03_5
+    21300012: Sprite Sheet 03_6
+    21300014: Sprite Sheet 03_7
+    21300016: Sprite Sheet 03_8
+    21300018: Sprite Sheet 03_9
+    21300020: Sprite Sheet 03_10
+    21300022: Sprite Sheet 03_11
+    21300024: Sprite Sheet 03_12
+    21300026: Sprite Sheet 03_13
+    21300028: Sprite Sheet 03_14
+    21300030: Sprite Sheet 03_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +51,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
