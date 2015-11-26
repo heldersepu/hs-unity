@@ -8,7 +8,7 @@ public class Arrow : MonoBehaviour {
     public bool right = true;
 
 	void Start () {
-		Destroy(this.gameObject, 10);
+		Destroy(this.gameObject, 3);
 		float y = Random.Range (-1f, 10f);
 		v = new Vector3(20, y, 0);
         if (!right)
