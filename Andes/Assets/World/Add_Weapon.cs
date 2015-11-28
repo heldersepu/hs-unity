@@ -12,7 +12,7 @@ public class Add_Weapon : MonoBehaviour {
 	}
 
 	void Update () {
-		if (addWeapon && Time.frameCount > 500) {
+		if (Time.timeScale > 0 && addWeapon && Time.frameCount > 500) {
 			addWeapon = false;
 			AddWeapon (15, -1);
 		}

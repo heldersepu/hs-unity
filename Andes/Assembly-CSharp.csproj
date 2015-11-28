@@ -51,6 +51,7 @@
      <Compile Include="Assets\World\AddCoins.cs" />
      <Compile Include="Assets\World\Add_Weapon.cs" />
      <Compile Include="Assets\World\Clouds\cloud.cs" />
+     <Compile Include="Assets\World\GlobalInput.cs" />
      <Compile Include="Assets\World\SelfDestroy.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

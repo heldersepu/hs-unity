@@ -49,9 +49,9 @@ public class Orc : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		Debug.Log (col.gameObject.name);
-		if (col.gameObject.name.StartsWith ("arrow")) {
-			Destroy (col.gameObject);
+		if (col.gameObject.name.Equals ("goblin_arrow")) {
 			flipHead ();
+			Destroy (col.gameObject);
 			Invoke ("flipHead", 0.4f);
 			orc.text = (int.Parse(orc.text)-5).ToString();
 		} else if (col.gameObject.name.StartsWith ("coin")) {

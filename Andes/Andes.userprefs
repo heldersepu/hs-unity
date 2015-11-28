@@ -1,11 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\World\SelfDestroy.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\World\GlobalInput.cs">
     <Files>
-      <File FileName="Assets\World\Add_Weapon.cs" Line="15" Column="39" />
-      <File FileName="Assets\Orc Warrior\Scripts\Orc.cs" Line="49" Column="29" />
-      <File FileName="Assets\World\AddCoins.cs" Line="13" Column="2" />
-      <File FileName="Assets\World\SelfDestroy.cs" Line="9" Column="27" />
+      <File FileName="Assets\Goblin Archer\Scripts\Arrow.cs" Line="18" Column="2" />
+      <File FileName="Assets\World\SelfDestroy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Orc Warrior\Scripts\Orc.cs" Line="1" Column="1" />
+      <File FileName="Assets\World\Add_Weapon.cs" Line="15" Column="3" />
+      <File FileName="Assets\World\AddCoins.cs" Line="9" Column="50" />
+      <File FileName="Assets\World\GlobalInput.cs" Line="23" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

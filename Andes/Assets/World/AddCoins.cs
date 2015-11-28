@@ -6,7 +6,7 @@ public class AddCoins : MonoBehaviour {
 	public GameObject coin;
 	
 	void Update () {
-		if (Random.value > 0.99f)
+		if (Time.timeScale > 0 && Random.value > 0.99f)
 			AddCoin (Random.Range (-6f, 10f), Random.Range (0f, -2f));
 	}
 
