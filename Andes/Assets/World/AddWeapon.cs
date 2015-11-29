@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Add_Weapon : MonoBehaviour {
+public class AddWeapon : MonoBehaviour {
 
 	public GameObject weapon;
 	private bool addWeapon = true;
@@ -14,11 +14,11 @@ public class Add_Weapon : MonoBehaviour {
 	void Update () {
 		if (Time.timeScale > 0 && addWeapon && Time.frameCount > 500) {
 			addWeapon = false;
-			AddWeapon (15, -1);
+			AddWeaponAt (15, -1);
 		}
 	}
 
-	void AddWeapon (float x, float y ) {
+	void AddWeaponAt (float x, float y ) {
 		Vector3 position = new Vector3 (x, y, 0);
 		Instantiate (weapon, position, Quaternion.identity);
 	}

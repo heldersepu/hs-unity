@@ -13,14 +13,14 @@ public class Orc : MonoBehaviour {
 	private int lastJump = 0;
 	private int lastAttack = 0;
 	private GameObject head;
-	private SpriteRenderer weapon;
+	private GameObject weapon;
 
 	void Start () {
 		anim = GetComponent<Animator>();
 		rbody = GetComponent<Rigidbody2D> ();
 		head = GameObject.Find("orc_head");
-		var orc_weapon = GameObject.Find("orc_weapon");
-		weapon = orc_weapon.GetComponent<SpriteRenderer> ();
+		weapon = GameObject.Find("orc_weapon");
+		weapon.SetActive(false);
 	}
 
 	void Update () {
@@ -38,7 +38,7 @@ public class Orc : MonoBehaviour {
 			rbody.AddForce (Vector3.up * 400);
 			lastJump = Time.frameCount;
 		}
-		if (IsWeaponVisible() && Input.GetButton("Fire1") && (Time.frameCount - lastAttack > 100)) {
+		if (weapon.activeSelf && Input.GetButton("Fire1") && (Time.frameCount - lastAttack > 100)) {
 			anim.SetFloat ("speed", 0);
 			anim.SetTrigger ("attack");
 			lastAttack = Time.frameCount;
@@ -59,7 +59,7 @@ public class Orc : MonoBehaviour {
 			coins.text = (int.Parse(coins.text)+1).ToString();
 		} else if (col.gameObject.name.StartsWith ("orc_weapon")) {
 			Destroy (col.gameObject);
-			weapon.sortingOrder = 0;			
+			weapon.SetActive(true);
 		}
 	}
 
@@ -72,9 +72,4 @@ public class Orc : MonoBehaviour {
 		s.x *= -1;
 		t.localScale = s;
 	}
-
-	bool IsWeaponVisible() { 
-		return (weapon.sortingOrder == 0);
-	}
-
 }

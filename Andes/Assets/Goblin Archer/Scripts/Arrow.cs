@@ -19,13 +19,5 @@ public class Arrow : MonoBehaviour {
 		transform.position += v*Time.deltaTime;
 		v += a * Time.deltaTime;        
        	transform.rotation = Quaternion.LookRotation(v, new Vector3(0,0,-1));
-	}
-
-	void OnTriggerEnter2D (Collider2D col) {
-		if (col.gameObject.name.StartsWith ("coin")) {
-			//Destroy(col.gameObject);
-			var colRigidBody = col.gameObject.GetComponent<Rigidbody2D>();
-			colRigidBody.gravityScale = 1;
-		}
-	}
+	}	
 }
