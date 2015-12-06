@@ -7,6 +7,7 @@ public class cloud : MonoBehaviour {
 	public float oscil = 1f;
 
 	private float y = 0;
+	private float max = 40f;
 
 	void Start () {
 		y = transform.position.y;
@@ -18,11 +19,9 @@ public class cloud : MonoBehaviour {
 
 	void Update () {
 		float x = transform.position.x + speed;
-		if (x > 24)
-			x = -24;
-		if (x < -24)
-			x = 24;
-		float inc = Mathf.Sin (transform.position.x) * oscil;
+		if (x > max) x = -max;
+		if (x < -max) x = max;
+		float inc = Mathf.Sin (x) * oscil;
 		transform.position = new Vector3 (x, y + inc, transform.position.z); 
 	}
 }

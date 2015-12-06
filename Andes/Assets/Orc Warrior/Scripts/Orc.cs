@@ -52,7 +52,7 @@ public class Orc : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
-		Debug.Log (col.gameObject.name);
+		//Debug.Log (col.gameObject.name);
 		if (col.gameObject.name.Equals ("goblin_arrow")) {
 			flipHead ();
 			Destroy (col.gameObject);

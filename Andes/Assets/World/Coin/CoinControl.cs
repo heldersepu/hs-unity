@@ -19,10 +19,13 @@ public class CoinControl : MonoBehaviour {
 		{
 			var scale = this.transform.localScale;
 			scale = new Vector3(scale.x * fade, scale.y * fade, scale.z * fade);
-			this.transform.localScale = scale;
-			if (scale.x < 0.0001f) Destroy (this.gameObject);
+			transform.localScale = scale;
+			if (scale.x < 0.1f) Destroy (this.gameObject);
 		}
-		if (rb.velocity.y > 0) rb.gravityScale = 1;
+		if (rb.velocity.y != 0) {
+			rb.gravityScale = 1;
+
+		}
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {

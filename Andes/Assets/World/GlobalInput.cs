@@ -9,8 +9,10 @@ public class GlobalInput : MonoBehaviour {
 	public GameObject orc;
 
 	private Camera cam;
+	private float size;
 	void Start () {
 		cam = mainCamera.GetComponent<Camera> ();
+		size = cam.orthographicSize;
 	}
 
 	void Update () {
@@ -24,16 +26,17 @@ public class GlobalInput : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			ChangeState (false);
 		} else if (Input.GetKeyDown (KeyCode.V)) {
-			cam.orthographicSize = (cam.orthographicSize ==8) ? 10 : 8;
+			size = (size == 8) ? 10 : 8;
 		}
-		if (cam.orthographicSize == 8) {
+		if (size == 8) {
 			var pos = mainCamera.transform.position;
-			pos.x = orc.transform.position.x;
+			pos.x = Mathf.Lerp (pos.x, orc.transform.position.x, Time.time/60);
 			mainCamera.transform.position = pos;
 		} else {
-			mainCamera.transform.position = new Vector3(0,0,-100);
+			var x = Mathf.Lerp (mainCamera.transform.position.x, 0, Time.time/60);
+			mainCamera.transform.position = new Vector3(x, 0, -100);
 		}
-
+		cam.orthographicSize = Mathf.Lerp (cam.orthographicSize, size, Time.time/60);
 	}
 
 	void ChangeState(bool show){
