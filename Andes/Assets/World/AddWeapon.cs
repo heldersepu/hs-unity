@@ -7,8 +7,7 @@ public class AddWeapon : MonoBehaviour {
 	private bool addWeapon = true;
 	
 	void Start () {
-		var anim = weapon.GetComponent<Animator> ();
-		anim.SetTrigger("idle");
+		weapon.GetComponent<Animator>().SetTrigger("idle");
 	}
 
 	void Update () {

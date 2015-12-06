@@ -5,6 +5,8 @@ using System.Collections;
 public class Orc : MonoBehaviour {
 
 	public float speed = 10f;
+	public int coinCount = 0;
+	public int energy = 100;
 	public Text orc;
 	public Text coins;
 
@@ -45,6 +47,8 @@ public class Orc : MonoBehaviour {
 		} else {
 			anim.SetFloat ("speed", Mathf.Abs (rbody.velocity.x));
 		}
+		coins.text = coinCount.ToString();
+		orc.text = energy.ToString();
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
@@ -53,10 +57,10 @@ public class Orc : MonoBehaviour {
 			flipHead ();
 			Destroy (col.gameObject);
 			Invoke ("flipHead", 0.4f);
-			orc.text = (int.Parse(orc.text)-5).ToString();
+			energy -= 5;
 		} else if (col.gameObject.name.StartsWith ("coin")) {
 			Destroy (col.gameObject);
-			coins.text = (int.Parse(coins.text)+1).ToString();
+			coinCount++;
 		} else if (col.gameObject.name.StartsWith ("orc_weapon")) {
 			Destroy (col.gameObject);
 			weapon.SetActive(true);
