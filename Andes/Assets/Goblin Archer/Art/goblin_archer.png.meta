@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 7ac6e9b292f137147b3df877cbc2523c
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: goblin_L_ear
+    21300002: goblin_R_ear
+    21300004: goblin_head
+    21300006: goblin_L_brow
+    21300008: goblin_R_brow
+    21300010: goblin_L_eye
+    21300012: goblin_R_eye
+    21300014: goblin_L_hand
+    21300016: goblin_body
+    21300018: goblin_L_lowerarm
+    21300020: goblin_R_upperarm
+    21300022: goblin_R_lowerarm
+    21300024: goblin_R_hand
+    21300026: goblin_L_upperarm
+    21300028: goblin_bow
+    21300030: goblin_L_necklace
+    21300032: goblin_R_necklace
+    21300034: goblin_bellybutton
+    21300036: goblin_arrow
+    21300038: goblin_tooth
+    21300040: goblin_L_leg
+    21300042: goblin_R_leg
+    21300044: goblin_L_foot
+    21300046: goblin_R_foot
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -15,7 +39,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -35,11 +59,12 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -49,6 +74,7 @@ TextureImporter:
     maxTextureSize: 1024
     textureFormat: -2
     compressionQuality: 50
+    allowsAlphaSplitting: 0
   spriteSheet:
     sprites:
     - name: goblin_L_ear
@@ -59,8 +85,18 @@ TextureImporter:
         width: 108
         height: 109
       alignment: 9
-      pivot: {x: .835203826, y: .0806201622}
+      pivot: {x: 0.8352038, y: 0.08062016}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67.20201, y: 100.2124}
+        - {x: -90.20201, y: 100.2124}
+        - {x: -90.20201, y: 85.2124}
+        - {x: -82.20201, y: 54.212402}
+        - {x: -24.202011, y: -8.787598}
+        - {x: 0.7979889, y: -8.787598}
+        - {x: 17.797989, y: -0.78759766}
+        - {x: 17.797989, y: 19.212402}
+        - {x: -9.202011, y: 82.2124}
     - name: goblin_R_ear
       rect:
         serializedVersion: 2
@@ -69,8 +105,17 @@ TextureImporter:
         width: 49
         height: 113
       alignment: 9
-      pivot: {x: .339726657, y: .0883605406}
+      pivot: {x: 0.33972666, y: 0.08836054}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.646606, y: 103.01526}
+        - {x: -16.646606, y: 55.01526}
+        - {x: -16.646606, y: -3.9847412}
+        - {x: 0.35339355, y: -9.984741}
+        - {x: 28.353394, y: -9.984741}
+        - {x: 32.353394, y: 6.015259}
+        - {x: 32.353394, y: 66.01526}
+        - {x: -1.6466064, y: 103.01526}
     - name: goblin_head
       rect:
         serializedVersion: 2
@@ -79,8 +124,31 @@ TextureImporter:
         width: 261
         height: 326
       alignment: 9
-      pivot: {x: .262219906, y: .436543465}
+      pivot: {x: 0.2622199, y: 0.43654346}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 144.56061, y: 89.68683}
+        - {x: 122.56061, y: 141.68683}
+        - {x: 94.56061, y: 169.68683}
+        - {x: 67.56061, y: 183.68683}
+        - {x: -16.439392, y: 183.68683}
+        - {x: -54.439392, y: 150.68683}
+        - {x: -68.43939, y: 115.68683}
+        - {x: -68.43939, y: 23.686829}
+        - {x: -50.439392, y: 0.6868286}
+        - {x: 1.5606079, y: -90.31317}
+        - {x: 36.560608, y: -131.31317}
+        - {x: 51.560608, y: -138.31317}
+        - {x: 69.56061, y: -142.31317}
+        - {x: 81.56061, y: -142.31317}
+        - {x: 97.56061, y: -127.31317}
+        - {x: 95.56061, y: -49.31317}
+        - {x: 181.56061, y: -142.31317}
+        - {x: 192.56061, y: -142.31317}
+        - {x: 192.56061, y: -109.31317}
+        - {x: 181.56061, y: -23.313171}
+        - {x: 156.56061, y: 4.6868286}
+        - {x: 139.56061, y: 22.686829}
     - name: goblin_L_brow
       rect:
         serializedVersion: 2
@@ -89,8 +157,14 @@ TextureImporter:
         width: 106
         height: 39
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: -19.5}
+        - {x: 53, y: -19.5}
+        - {x: 53, y: 19.5}
+        - {x: -53, y: 19.5}
+        - {x: -53, y: -8.5}
     - name: goblin_R_brow
       rect:
         serializedVersion: 2
@@ -99,8 +173,18 @@ TextureImporter:
         width: 64
         height: 58
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 29}
+        - {x: 20, y: 29}
+        - {x: -32, y: 1}
+        - {x: -32, y: -21}
+        - {x: -26, y: -29}
+        - {x: -19, y: -29}
+        - {x: -18, y: -28}
+        - {x: 26, y: -5}
+        - {x: 32, y: -2}
     - name: goblin_L_eye
       rect:
         serializedVersion: 2
@@ -109,8 +193,18 @@ TextureImporter:
         width: 80
         height: 75
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 37.5}
+        - {x: -40, y: 24.5}
+        - {x: -40, y: -7.5}
+        - {x: -23, y: -34.5}
+        - {x: -10, y: -37.5}
+        - {x: 39, y: -37.5}
+        - {x: 40, y: -34.5}
+        - {x: 40, y: 13.5}
+        - {x: 12, y: 37.5}
     - name: goblin_R_eye
       rect:
         serializedVersion: 2
@@ -119,8 +213,16 @@ TextureImporter:
         width: 37
         height: 66
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 19}
+        - {x: -18.5, y: -33}
+        - {x: 5.5, y: -33}
+        - {x: 18.5, y: -14}
+        - {x: 18.5, y: 33}
+        - {x: -3.5, y: 33}
+        - {x: -17.5, y: 26}
     - name: goblin_L_hand
       rect:
         serializedVersion: 2
@@ -129,8 +231,18 @@ TextureImporter:
         width: 50
         height: 63
       alignment: 9
-      pivot: {x: .719913006, y: .188332215}
+      pivot: {x: 0.719913, y: 0.18833221}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.99565, y: 51.13507}
+        - {x: -35.99565, y: 21.13507}
+        - {x: -20.995651, y: -6.864929}
+        - {x: -16.995651, y: -11.864929}
+        - {x: 5.0043488, y: -11.864929}
+        - {x: 9.004349, y: -10.864929}
+        - {x: 14.004349, y: -8.864929}
+        - {x: 14.004349, y: 39.13507}
+        - {x: 9.004349, y: 51.13507}
     - name: goblin_body
       rect:
         serializedVersion: 2
@@ -139,8 +251,25 @@ TextureImporter:
         width: 161
         height: 368
       alignment: 9
-      pivot: {x: .371509999, y: .14866066}
+      pivot: {x: 0.37151, y: 0.14866066}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.18689, y: 159.29288}
+        - {x: 99.18689, y: 280.29288}
+        - {x: 99.18689, y: 307.29288}
+        - {x: 93.18689, y: 313.29288}
+        - {x: 56.18689, y: 313.29288}
+        - {x: 43.18689, y: 309.29288}
+        - {x: -3.8131104, y: 257.29288}
+        - {x: -57.81311, y: 176.29288}
+        - {x: -59.81311, y: 172.29288}
+        - {x: -59.81311, y: -9.707123}
+        - {x: -58.81311, y: -29.707123}
+        - {x: -39.81311, y: -54.707123}
+        - {x: 77.18689, y: -54.707123}
+        - {x: 101.18689, y: -23.707123}
+        - {x: 101.18689, y: 23.292877}
+        - {x: 92.18689, y: 44.292877}
     - name: goblin_L_lowerarm
       rect:
         serializedVersion: 2
@@ -149,8 +278,18 @@ TextureImporter:
         width: 66
         height: 124
       alignment: 9
-      pivot: {x: .797501326, y: .0819625854}
+      pivot: {x: 0.7975013, y: 0.081962585}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.635086, y: 113.83664}
+        - {x: -52.635086, y: 113.83664}
+        - {x: -52.635086, y: 49.83664}
+        - {x: -32.635086, y: -5.1633606}
+        - {x: -24.635086, y: -10.163361}
+        - {x: 11.364914, y: -10.163361}
+        - {x: 13.364914, y: -6.1633606}
+        - {x: 13.364914, y: 47.83664}
+        - {x: -6.635086, y: 100.83664}
     - name: goblin_R_upperarm
       rect:
         serializedVersion: 2
@@ -159,8 +298,15 @@ TextureImporter:
         width: 93
         height: 44
       alignment: 9
-      pivot: {x: .0777397603, y: .749901533}
+      pivot: {x: 0.07773976, y: 0.74990153}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.2297974, y: 11.0043335}
+        - {x: -7.2297974, y: -22.995667}
+        - {x: 18.770203, y: -32.995667}
+        - {x: 85.7702, y: -32.995667}
+        - {x: 85.7702, y: -7.9956665}
+        - {x: 69.7702, y: 11.0043335}
     - name: goblin_R_lowerarm
       rect:
         serializedVersion: 2
@@ -169,8 +315,17 @@ TextureImporter:
         width: 93
         height: 42
       alignment: 9
-      pivot: {x: .0861849189, y: .7618016}
+      pivot: {x: 0.08618492, y: 0.7618016}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.0151978, y: 10.0043335}
+        - {x: -8.015198, y: 7.0043335}
+        - {x: -8.015198, y: -17.995667}
+        - {x: 5.9848022, y: -23.995667}
+        - {x: 51.984802, y: -31.995667}
+        - {x: 84.9848, y: -31.995667}
+        - {x: 84.9848, y: -7.9956665}
+        - {x: 45.984802, y: 10.0043335}
     - name: goblin_R_hand
       rect:
         serializedVersion: 2
@@ -179,8 +334,16 @@ TextureImporter:
         width: 50
         height: 68
       alignment: 9
-      pivot: {x: .264378667, y: .118848018}
+      pivot: {x: 0.26437867, y: 0.11884802}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.781067, y: 59.918335}
+        - {x: -13.218933, y: 42.918335}
+        - {x: -13.218933, y: -1.081665}
+        - {x: -4.218933, y: -8.081665}
+        - {x: 20.781067, y: -8.081665}
+        - {x: 36.781067, y: 13.918335}
+        - {x: 36.781067, y: 59.918335}
     - name: goblin_L_upperarm
       rect:
         serializedVersion: 2
@@ -189,8 +352,15 @@ TextureImporter:
         width: 68
         height: 104
       alignment: 9
-      pivot: {x: .858051538, y: .900253892}
+      pivot: {x: 0.85805154, y: 0.9002539}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.347504, y: 10.373596}
+        - {x: -58.347504, y: -10.626404}
+        - {x: -58.347504, y: -93.6264}
+        - {x: -26.347504, y: -93.6264}
+        - {x: 9.652496, y: -22.626404}
+        - {x: 9.652496, y: 10.373596}
     - name: goblin_bow
       rect:
         serializedVersion: 2
@@ -199,8 +369,20 @@ TextureImporter:
         width: 168
         height: 351
       alignment: 9
-      pivot: {x: .102622986, y: .479861498}
+      pivot: {x: 0.102622986, y: 0.4798615}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 74.75934, y: 182.56862}
+        - {x: 97.75934, y: 119.56862}
+        - {x: -8.240662, y: 48.56862}
+        - {x: -17.240662, y: 22.568619}
+        - {x: -17.240662, y: -42.43138}
+        - {x: 89.75934, y: -152.43138}
+        - {x: 98.75934, y: -168.43138}
+        - {x: 135.75934, y: -168.43138}
+        - {x: 150.75934, y: -150.43138}
+        - {x: 150.75934, y: 156.56862}
+        - {x: 131.75934, y: 182.56862}
     - name: goblin_L_necklace
       rect:
         serializedVersion: 2
@@ -209,8 +391,17 @@ TextureImporter:
         width: 53
         height: 135
       alignment: 9
-      pivot: {x: .082154043, y: .960579872}
+      pivot: {x: 0.08215404, y: 0.9605799}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.645836, y: -1.6782837}
+        - {x: 13.645836, y: 5.3217163}
+        - {x: -4.354164, y: 5.3217163}
+        - {x: -4.354164, y: -54.678284}
+        - {x: 27.645836, y: -129.67828}
+        - {x: 48.645836, y: -129.67828}
+        - {x: 48.645836, y: -98.67828}
+        - {x: 45.645836, y: -38.678284}
     - name: goblin_R_necklace
       rect:
         serializedVersion: 2
@@ -219,8 +410,9 @@ TextureImporter:
         width: 28
         height: 119
       alignment: 9
-      pivot: {x: .616131365, y: .0390308276}
+      pivot: {x: 0.61613137, y: 0.039030828}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: goblin_bellybutton
       rect:
         serializedVersion: 2
@@ -229,8 +421,9 @@ TextureImporter:
         width: 24
         height: 22
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: goblin_arrow
       rect:
         serializedVersion: 2
@@ -239,8 +432,18 @@ TextureImporter:
         width: 70
         height: 235
       alignment: 9
-      pivot: {x: .553064823, y: .136453211}
+      pivot: {x: 0.5530648, y: 0.13645321}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31.285461, y: 178.9335}
+        - {x: 26.285461, y: 195.9335}
+        - {x: 6.2854614, y: 202.9335}
+        - {x: -38.71454, y: 202.9335}
+        - {x: -38.71454, y: -32.066505}
+        - {x: 28.285461, y: -32.066505}
+        - {x: 31.285461, y: -18.066505}
+        - {x: 22.285461, y: 20.933495}
+        - {x: 31.285461, y: 86.933495}
     - name: goblin_tooth
       rect:
         serializedVersion: 2
@@ -249,8 +452,17 @@ TextureImporter:
         width: 47
         height: 66
       alignment: 9
-      pivot: {x: .28276062, y: .82130152}
+      pivot: {x: 0.28276062, y: 0.8213015}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.71025, y: 11.794098}
+        - {x: -13.289749, y: 11.794098}
+        - {x: -13.289749, y: -31.205902}
+        - {x: 3.7102509, y: -54.205902}
+        - {x: 23.71025, y: -54.205902}
+        - {x: 33.71025, y: -42.205902}
+        - {x: 33.71025, y: -4.205902}
+        - {x: 30.71025, y: 6.794098}
     - name: goblin_L_leg
       rect:
         serializedVersion: 2
@@ -259,8 +471,17 @@ TextureImporter:
         width: 40
         height: 72
       alignment: 9
-      pivot: {x: .509854138, y: .917881846}
+      pivot: {x: 0.50985414, y: 0.91788185}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.605835, y: 5.912506}
+        - {x: -16.394165, y: 5.912506}
+        - {x: -20.394165, y: -0.0874939}
+        - {x: -20.394165, y: -66.087494}
+        - {x: 15.605835, y: -66.087494}
+        - {x: 18.605835, y: -62.087494}
+        - {x: 19.605835, y: -36.087494}
+        - {x: 19.605835, y: 3.912506}
     - name: goblin_R_leg
       rect:
         serializedVersion: 2
@@ -269,8 +490,16 @@ TextureImporter:
         width: 40
         height: 72
       alignment: 2
-      pivot: {x: .5, y: 1}
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 0}
+        - {x: -20, y: -67}
+        - {x: -16, y: -72}
+        - {x: 13, y: -72}
+        - {x: 17, y: -68}
+        - {x: 20, y: -40}
+        - {x: 20, y: 0}
     - name: goblin_L_foot
       rect:
         serializedVersion: 2
@@ -279,8 +508,9 @@ TextureImporter:
         width: 53
         height: 28
       alignment: 9
-      pivot: {x: .223662749, y: .742851257}
+      pivot: {x: 0.22366275, y: 0.74285126}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: goblin_R_foot
       rect:
         serializedVersion: 2
@@ -289,8 +519,10 @@ TextureImporter:
         width: 51
         height: 27
       alignment: 9
-      pivot: {x: .202570304, y: .713100851}
+      pivot: {x: 0.2025703, y: 0.71310085}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
