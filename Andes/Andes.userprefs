@@ -2,17 +2,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Orc Warrior\Scripts\WeaponControl.cs">
     <Files>
-      <File FileName="Assets\Orc Warrior\Scripts\WeaponControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\World\Coin\CoinControl.cs" Line="22" Column="4" />
+      <File FileName="Assets\Orc Warrior\Scripts\WeaponControl.cs" Line="23" Column="21" />
+      <File FileName="Assets\Orc Warrior\Scripts\Orc.cs" Line="78" Column="21" />
+      <File FileName="Assets\World\Coin\CoinControl.cs" Line="8" Column="2" />
       <File FileName="Assets\World\Clouds\cloud.cs" Line="1" Column="1" />
-      <File FileName="Assets\World\GlobalInput.cs" Line="1" Column="1" />
-      <File FileName="Assets\Orc Warrior\Scripts\Orc.cs" Line="65" Column="4" />
+      <File FileName="Assets\World\GlobalInput.cs" Line="39" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="L:\hs-unity\Andes\Assets\World\Coin\CoinControl.cs" line="25" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

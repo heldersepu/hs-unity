@@ -17,14 +17,14 @@ public class CoinControl : MonoBehaviour {
 	void Update () {
 		if (shrink && rb.velocity.y == 0)
 		{
-			var scale = this.transform.localScale;
+			var scale = transform.localScale;
 			scale = new Vector3(scale.x * fade, scale.y * fade, scale.z * fade);
 			transform.localScale = scale;
-			if (scale.x < 0.1f) Destroy (this.gameObject);
+			if (scale.x < 0.1f) Destroy (gameObject);
 		}
 		if (rb.velocity.y != 0) {
 			rb.gravityScale = 1;
-
+			if (transform.position.y < -20) Destroy (gameObject);
 		}
 	}
 

@@ -4,7 +4,8 @@ using System.Collections;
 
 public class Orc : MonoBehaviour {
 
-	public float speed = 10f;
+	public float speed = 100f;
+	public float jump = 4000f;
 	public int coinCount = 0;
 	public int energy = 100;
 	public Text orc;
@@ -36,11 +37,11 @@ public class Orc : MonoBehaviour {
 				flip (transform);
 		}
 		anim.SetFloat ("speed", Mathf.Abs(rbody.velocity.x));
-		if (verti > 0 && (Time.frameCount - lastJump > 100)) {
-			rbody.AddForce (Vector3.up * 400);
+		if (verti > 0 && (Time.frameCount - lastJump > 60)) {
+			rbody.AddForce (Vector3.up * jump);
 			lastJump = Time.frameCount;
 		}
-		if (weapon.activeSelf && Input.GetButton("Fire1") && (Time.frameCount - lastAttack > 100)) {
+		if (weapon.activeSelf && Input.GetButton("Fire1") && (Time.frameCount - lastAttack > 60)) {
 			anim.SetFloat ("speed", 0);
 			anim.SetTrigger ("attack");
 			lastAttack = Time.frameCount;
@@ -68,7 +69,9 @@ public class Orc : MonoBehaviour {
 	}
 
 	void flipHead() {
-		flip (head.transform);
+		flip(head.transform);
+		var sr = head.GetComponent<SpriteRenderer>(); 
+		sr.color = (sr.color == Color.white) ? Color.yellow : Color.white;
 	}
 
 	void flip(Transform t) {
