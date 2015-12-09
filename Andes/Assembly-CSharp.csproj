@@ -54,6 +54,7 @@
      <Compile Include="Assets\World\Clouds\cloud.cs" />
      <Compile Include="Assets\World\Coin\CoinControl.cs" />
      <Compile Include="Assets\World\GlobalInput.cs" />
+     <Compile Include="Assets\World\GreenParticles\ParticlesController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
