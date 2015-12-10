@@ -8,7 +8,7 @@ public class WeaponControl : MonoBehaviour {
 
 
 	void OnTriggerEnter2D (Collider2D col) {
-		Debug.Log (col.gameObject.name);
+		//Debug.Log (col.gameObject.name);
 		if (col.gameObject.name.StartsWith ("block")) {
 			var scale = col.gameObject.transform.localScale;
 			scale = new Vector3(scale.x * fade, scale.y * fade, scale.z * fade);

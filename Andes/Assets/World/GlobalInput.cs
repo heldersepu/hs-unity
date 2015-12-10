@@ -10,6 +10,7 @@ public class GlobalInput : MonoBehaviour {
 
 	private Camera cam;
 	private float size;
+	private Vector3 camPos = new Vector3 (0, 0, -100);
 	void Start () {
 		cam = mainCamera.GetComponent<Camera> ();
 		size = cam.orthographicSize;
@@ -27,16 +28,19 @@ public class GlobalInput : MonoBehaviour {
 			ChangeState (false);
 		} else if (Input.GetKeyDown (KeyCode.V)) {
 			size = (size == 8) ? 10 : 8;
+			if (size == 10) 
+				camPos = new Vector3 (0, 0, -100);
 		}
 		if (size == 8) {
-			var pos = mainCamera.transform.position;
-			pos.x = Mathf.Lerp (pos.x, orc.transform.position.x, Time.time/60);
-			mainCamera.transform.position = pos;
-		} else {
-			var x = Mathf.Lerp (mainCamera.transform.position.x, 0, Time.time/60);
-			mainCamera.transform.position = new Vector3(x, 0, -100);
+			if (Mathf.Abs (camPos.x - orc.transform.position.x) < 2)
+				camPos.x = orc.transform.position.x;
+			else {
+				camPos.x = orc.transform.position.x;
+				camPos = Vector3.MoveTowards (mainCamera.transform.position, camPos, 0.3f);
+			}
 		}
-		cam.orthographicSize = Mathf.Lerp (cam.orthographicSize, size, Time.time/60);
+		mainCamera.transform.position = camPos;
+		cam.orthographicSize = Mathf.Lerp (cam.orthographicSize, size, 0.1f);
 	}
 
 	void ChangeState(bool show){

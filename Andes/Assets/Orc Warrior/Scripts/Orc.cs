@@ -7,7 +7,7 @@ public class Orc : MonoBehaviour {
 	public float speed = 100f;
 	public float jump = 4000f;
 	public int coinCount = 0;
-	public int energy = 100;
+	public float energy = 100;
 	public Text orc;
 	public Text coins;
 
@@ -49,11 +49,10 @@ public class Orc : MonoBehaviour {
 			anim.SetFloat ("speed", Mathf.Abs (rbody.velocity.x));
 		}
 		coins.text = coinCount.ToString();
-		orc.text = energy.ToString();
+		orc.text = ((int)energy).ToString();
 	}
 
-	void OnTriggerEnter2D (Collider2D col) {
-		Debug.Log (col.gameObject.name);
+	void OnTriggerEnter2D (Collider2D col) {		
 		if (col.gameObject.name.Equals ("goblin_arrow")) {
 			flipHead ();
 			Destroy (col.gameObject);
@@ -65,6 +64,10 @@ public class Orc : MonoBehaviour {
 		} else if (col.gameObject.name.StartsWith ("orc_weapon")) {
 			Destroy (col.gameObject);
 			weapon.SetActive(true);
+		} else if (col.gameObject.name.StartsWith ("GreenParticles")) {
+			energy += 0.1f;
+		} else {
+			Debug.Log (col.gameObject.name);
 		}
 	}
 
