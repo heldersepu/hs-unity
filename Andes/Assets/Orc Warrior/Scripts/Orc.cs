@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Analytics;
 
 public class Orc : MonoBehaviour {
 
@@ -18,7 +19,12 @@ public class Orc : MonoBehaviour {
 	private GameObject head;
 	private GameObject weapon;
 
+	private AudioSource aSource;
+	public AudioClip ouch;
+	public AudioClip coin;
+
 	void Start () {
+		aSource = GetComponent<AudioSource>();
 		anim = GetComponent<Animator>();
 		rbody = GetComponent<Rigidbody2D> ();
 		head = GameObject.Find("orc_head");
@@ -40,11 +46,13 @@ public class Orc : MonoBehaviour {
 		if (verti > 0 && (Time.frameCount - lastJump > 60)) {
 			rbody.AddForce (Vector3.up * jump);
 			lastJump = Time.frameCount;
+			Analytics.CustomEvent ("jump", null);
 		}
 		if (weapon.activeSelf && Input.GetButton("Fire1") && (Time.frameCount - lastAttack > 60)) {
 			anim.SetFloat ("speed", 0);
 			anim.SetTrigger ("attack");
 			lastAttack = Time.frameCount;
+			Analytics.CustomEvent ("attack", null);
 		} else {
 			anim.SetFloat ("speed", Mathf.Abs (rbody.velocity.x));
 		}
@@ -54,11 +62,13 @@ public class Orc : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {		
 		if (col.gameObject.name.Equals ("goblin_arrow")) {
+			aSource.PlayOneShot (ouch);
 			flipHead ();
 			Destroy (col.gameObject);
 			Invoke ("flipHead", 0.4f);
 			energy -= 5;
 		} else if (col.gameObject.name.StartsWith ("coin")) {
+			aSource.PlayOneShot (coin);
 			Destroy (col.gameObject);
 			coinCount++;
 		} else if (col.gameObject.name.StartsWith ("orc_weapon")) {
