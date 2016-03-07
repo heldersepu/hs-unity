@@ -7,7 +7,8 @@ public class GlobalInput : MonoBehaviour {
 
 	public GameObject helpPanel;
 	public GameObject mainCamera;
-	public GameObject orc;
+	public GameObject background;
+	public Orc orc;
 
 	private Camera cam;
 	private float size;
@@ -30,10 +31,13 @@ public class GlobalInput : MonoBehaviour {
 		}
 		if (size == 8) {
 			camPos.x = orc.transform.position.x;
-			if (Mathf.Abs (camPos.x - orc.transform.position.x) > 2)
-				camPos = Vector3.MoveTowards (mainCamera.transform.position, camPos, 0.3f);
+			if (orc.okToJump())
+				camPos.y = orc.transform.position.y+5;
+			float d =  (Mathf.Abs (camPos.x - orc.transform.position.x) > 2) ? 0.3f: 0.5f; 				
+			camPos = Vector3.MoveTowards (mainCamera.transform.position, camPos, d);
 		}
 		mainCamera.transform.position = camPos;
+		background.transform.position = new Vector3 (camPos.x, camPos.y, 70);
 		cam.orthographicSize = Mathf.Lerp (cam.orthographicSize, size, 0.1f);
 	}
 

@@ -2,13 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Orc Warrior\Scripts\Orc.cs">
     <Files>
-      <File FileName="Assets\Orc Warrior\Scripts\Orc.cs" Line="22" Column="24" />
-      <File FileName="Assets\World\GlobalInput.cs" Line="1" Column="1" />
+      <File FileName="Assets\Orc Warrior\Scripts\Orc.cs" Line="19" Column="30" />
+      <File FileName="Assets\World\GlobalInput.cs" Line="13" Column="21" />
       <File FileName="Assets\Orc Warrior\Scripts\WeaponControl.cs" Line="1" Column="1" />
       <File FileName="Assets\World\GreenParticles\ParticlesController.cs" Line="1" Column="1" />
       <File FileName="Assets\World\AddWeapon.cs" Line="1" Column="1" />
       <File FileName="Assets\World\Coin\CoinControl.cs" Line="1" Column="1" />
       <File FileName="Assets\World\Clouds\cloud.cs" Line="1" Column="1" />
+      <File FileName="Assets\Goblin Archer\Scripts\Goblin.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

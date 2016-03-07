@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.Analytics;
 
 public class Orc : MonoBehaviour {
@@ -14,16 +15,21 @@ public class Orc : MonoBehaviour {
 
 	private Animator anim;
 	private Rigidbody2D rbody;
-	private int lastJump = 0;
-	private int lastAttack = 0;
+	private int lastJump = -100;
+	private int lastAttack = -100;
 	private GameObject head;
 	private GameObject weapon;
 
 	private AudioSource aSource;
+	private List<AudioClip> grunts;
+	public AudioClip grunt1;
+	public AudioClip grunt2;
+	public AudioClip grunt3;
 	public AudioClip ouch;
 	public AudioClip coin;
 
 	void Start () {
+		grunts = new List<AudioClip> { grunt1, grunt2, grunt3 };
 		aSource = GetComponent<AudioSource>();
 		anim = GetComponent<Animator>();
 		rbody = GetComponent<Rigidbody2D> ();
@@ -43,12 +49,12 @@ public class Orc : MonoBehaviour {
 				flip (transform);
 		}
 		anim.SetFloat ("speed", Mathf.Abs(rbody.velocity.x));
-		if (verti > 0 && (Time.frameCount - lastJump > 60)) {
+		if (verti > 0 && okToJump()) {
 			rbody.AddForce (Vector3.up * jump);
 			lastJump = Time.frameCount;
 			Analytics.CustomEvent ("jump", null);
 		}
-		if (weapon.activeSelf && Input.GetButton("Fire1") && (Time.frameCount - lastAttack > 60)) {
+		if (weapon.activeSelf && (Input.GetButton("Fire1") || Input.GetKey(KeyCode.Space)) && okToAttack()) {
 			anim.SetFloat ("speed", 0);
 			anim.SetTrigger ("attack");
 			lastAttack = Time.frameCount;
@@ -62,7 +68,7 @@ public class Orc : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {		
 		if (col.gameObject.name.Equals ("goblin_arrow")) {
-			aSource.PlayOneShot (ouch);
+			aSource.PlayOneShot (grunts[Random.Range (0, 2)]);
 			flipHead ();
 			Destroy (col.gameObject);
 			Invoke ("flipHead", 0.4f);
@@ -92,4 +98,13 @@ public class Orc : MonoBehaviour {
 		s.x *= -1;
 		t.localScale = s;
 	}
+
+	public bool okToJump() {
+		return (Time.frameCount - lastJump > 60);
+	}
+
+	public bool okToAttack() {
+		return (Time.frameCount - lastAttack > 60);
+	}
+
 }
